@@ -1,19 +1,59 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    meta: { layout: 'main' },
+    component: () => import('@/views/HomeView.vue')
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/login',
+    name: 'login',
+    meta: { layout: 'empty' },
+    component: () => import('@/views/Login-section.vue')
+  },
+  {
+    path: '/register',
+    name: 'register',
+    meta: { layout: 'empty' },
+    component: () => import('@/views/Register-section.vue')
+  },
+  {
+    path: '/categories',
+    name: 'categories',
+    meta: { layout: 'main' },
+    component: () => import('@/views/Categories-section.vue')
+  },
+  {
+    path: '/profile',
+    name: 'profile',
+    meta: { layout: 'main' },
+    component: () => import('@/views/Profile-section.vue')
+  },
+  {
+    path: '/record',
+    name: 'record',
+    meta: { layout: 'main' },
+    component: () => import('@/views/Record-section.vue')
+  },
+  {
+    path: '/planning',
+    name: 'planning',
+    meta: { layout: 'main' },
+    component: () => import('@/views/Planning-section.vue')
+  },
+  {
+    path: '/history',
+    name: 'history',
+    meta: { layout: 'main' },
+    component: () => import('@/views/History-section.vue')
+  },
+  {
+    path: '/detail',
+    name: 'detail',
+    meta: { layout: 'main' },
+    component: () => import('@/views/Detail-section.vue')
   }
 ]
 
